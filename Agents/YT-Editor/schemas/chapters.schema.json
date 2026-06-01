@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Chapters",
+  "type": "object",
+  "required": ["chapters"],
+  "properties": {
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["start_seconds", "title"],
+        "properties": {
+          "start_seconds": { "type": "number", "minimum": 0 },
+          "title": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

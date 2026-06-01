@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Full Analysis",
+  "type": "object",
+  "required": ["chapters", "hooks", "broll", "shorts", "description"],
+  "properties": {
+    "chapters": { "$ref": "chapters.schema.json#/properties/chapters" },
+    "hooks": { "$ref": "hook_segments.schema.json#/properties/hooks" },
+    "broll": { "$ref": "broll_segments.schema.json#/properties/segments" },
+    "shorts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "start_seconds", "end_seconds", "score", "reason", "transcript"],
+        "properties": {
+          "id": { "type": "string" },
+          "start_seconds": { "type": "number", "minimum": 0 },
+          "end_seconds": { "type": "number", "minimum": 0 },
+          "score": { "type": "number", "minimum": 0, "maximum": 1 },
+          "reason": { "type": "string" },
+          "transcript": { "type": "string" }
+        }
+      }
+    },
+    "description": { "type": "string" }
+  }
+}

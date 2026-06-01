@@ -1,0 +1,13 @@
+mode: mock
+paths:
+  inputs: inputs
+  outputs: outputs
+  reports: outputs/reports
+  clips: outputs/clips
+  final: outputs/final
+analysis:
+  chapter_interval_seconds: 120
+  max_merged_segment_chars: 700
+video:
+  ffmpeg_bin: ffmpeg
+  ffprobe_bin: ffprobe
